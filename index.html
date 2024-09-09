@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="to do.png">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <!-- Main todo container -->
+    <div class="container">
+        <!-- Header that has input and add button -->
+        <header>
+            <h1>Todo List</h1>
+            <div class="input-section">
+                <input id="todo-input" type="text" placeholder="📑 Add your todo here.." class="input w-full max-w-xs" />
+                <button id="add-button" class="btn btn-add">
+                    <i class="bx bx-plus bx-sm"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Due date selection -->
+        <div class="due-date-container">
+            <label for="due-date">Select Due Date:</label>
+            <select id="due-date-select">
+                <option value="none">None</option>
+                <option value="today">Today</option>
+                <option value="tomorrow">Tomorrow</option>
+                <option value="add-date">Add Due Date</option>
+            </select>
+            <input type="date" id="due-date-input" class="due-date-input" style="display:none;" />
+        </div>
+
+        <!-- Main filters container -->
+        <div class="main-filters-container">
+            <label class="filter-label" for="filter-todos">Filter To-dos:</label>
+            <select id="filter-todos" class="filters-select">
+                <option value="all">All</option>
+                <option value="rem">Pending</option>
+                <option value="com">Completed</option>
+            </select>
+        </div>
+
+        <!-- Delete buttons -->
+        <div class="todos-filter">
+            <button id="delete-selected" class="btn btn-ghost delete-selected-btn">
+                Delete Selected
+            </button>
+            <button id="delete-all" class="btn btn-ghost delete-all-btn">
+                Delete All
+            </button>
+        </div>
+
+        <!-- Todo list container -->
+        <ul id="all-todos" class="todos-list">
+            <li class="todo-item">
+                <span class="todo-text">Sample Task</span>
+                <button class="todo-complete-btn btn btn-success">Complete</button>
+            </li>
+            <!-- Add more todo items here -->
+        </ul>
+
+        <!-- Task stats -->
+        <div class="filters">
+            <div class="completed-task">
+                <p>Completed: <span id="c-count">0</span></p>
+            </div>
+            <div class="remaining-task">
+                <p>Total Tasks: <span id="r-count">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>
